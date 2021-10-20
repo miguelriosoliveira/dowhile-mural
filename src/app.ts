@@ -1,8 +1,40 @@
-import express from 'express';
+import 'dotenv/config';
+import 'express-async-errors';
+import http from 'http';
 
-const PORT = process.env.PORT || 3000;
+import celebrate from 'celebrate';
+import express from 'express';
+import { Server } from 'socket.io';
+
+import { globalErrorHandler, routeLogger } from './middlewares';
+import { router } from './routes';
+import { logger } from './utils/logger';
+
+const { GITHUB_CLIENT_ID } = process.env;
 
 const app = express();
 
-// eslint-disable-next-line no-console
-app.listen(PORT, () => console.log(`🚀 listening on port: ${PORT}`));
+export const httpServer = http.createServer(app);
+export const socketServer = new Server(httpServer, {
+	cors: { origin: '*' },
+});
+
+socketServer.on('connection', socket => {
+	logger.info(`User connected on socket ${socket.id}`);
+});
+
+app.use(routeLogger);
+app.use(express.json());
+app.use(router);
+app.use(celebrate.errors());
+
+app.get('/github', (request, response) => {
+	response.redirect(`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}`);
+});
+
+app.get('/signin/callback', (request, response) => {
+	const { code } = request.query;
+	response.json({ code });
+});
+
+app.use(globalErrorHandler);
