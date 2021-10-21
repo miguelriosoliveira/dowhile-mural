@@ -3,6 +3,7 @@ import 'express-async-errors';
 import http from 'http';
 
 import celebrate from 'celebrate';
+import cors from 'cors';
 import express from 'express';
 import { Server } from 'socket.io';
 
@@ -24,6 +25,7 @@ socketServer.on('connection', socket => {
 });
 
 app.use(routeLogger);
+app.use(cors());
 app.use(express.json());
 app.use(router);
 app.use(celebrate.errors());
