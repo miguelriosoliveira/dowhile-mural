@@ -21,6 +21,7 @@ export class CreateMessageService implements IService {
 		});
 
 		socketServer.emit('new-message', {
+			id: message.id,
 			text: message.text,
 			user_id: message.user_id,
 			created_at: message.created_at,
