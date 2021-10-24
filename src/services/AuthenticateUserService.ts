@@ -6,6 +6,11 @@ import { prismaClient } from '../prisma';
 
 import { IService } from './IService';
 
+interface IParams {
+	code: string;
+	client_type: 'server' | 'web' | 'mobile';
+}
+
 interface IAccessTokenResponse {
 	access_token: string;
 	error?: string;
@@ -20,7 +25,7 @@ interface IUserResponse {
 }
 
 export class AuthenticateUserService implements IService {
-	async execute(code: string) {
+	async execute({ code, client_type }: IParams) {
 		const { data: accessTokenResponse } = await axios.post<IAccessTokenResponse>(
 			'https://github.com/login/oauth/access_token',
 			null,
@@ -29,8 +34,9 @@ export class AuthenticateUserService implements IService {
 					Accept: 'application/json',
 				},
 				params: {
-					client_id: process.env.GITHUB_CLIENT_ID,
-					client_secret: process.env.GITHUB_CLIENT_SECRET,
+					// client_id: process.env.GITHUB_CLIENT_ID,
+					client_id: process.env[`GITHUB_CLIENT_ID_${client_type.toUpperCase()}`],
+					client_secret: process.env[`GITHUB_CLIENT_SECRET_${client_type.toUpperCase()}`],
 					code,
 				},
 			},

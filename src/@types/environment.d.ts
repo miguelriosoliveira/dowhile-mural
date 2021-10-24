@@ -3,9 +3,16 @@
 declare namespace NodeJS {
 	export interface ProcessEnv {
 		PORT?: number;
-		GITHUB_CLIENT_ID: string;
-		GITHUB_CLIENT_SECRET: string;
 		JWT_SECRET: string;
+
+		GITHUB_CLIENT_ID_SERVER: string;
+		GITHUB_CLIENT_SECRET_SERVER: string;
+
+		GITHUB_CLIENT_ID_WEB: string;
+		GITHUB_CLIENT_SECRET_WEB: string;
+
+		GITHUB_CLIENT_ID_MOBILE: string;
+		GITHUB_CLIENT_SECRET_MOBILE: string;
 	}
 	interface Process {
 		env: ProcessEnv;

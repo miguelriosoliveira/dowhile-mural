@@ -21,6 +21,7 @@ router.post(
 	celebrate({
 		[Segments.BODY]: {
 			code: Joi.string().required(),
+			client_type: Joi.string().allow('server', 'web', 'mobile').only().required(),
 		},
 	}),
 	authenticateUserController.handle,
