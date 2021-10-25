@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import SocketClient from 'socket.io-client';
 
-import styles from './styles.module.scss';
+import logo from '../../assets/logo.svg';
+import { api } from '../../services';
 
-import logo from 'assets/logo.svg';
-import { api } from 'services/api';
+import styles from './styles.module.scss';
 
 interface User {
 	name: string;
@@ -24,7 +24,6 @@ const socketClient = SocketClient(API_URL);
 
 const messagesQueue: Message[] = [];
 socketClient.on('new-message', (message: Message) => {
-	console.log(message);
 	messagesQueue.push(message);
 });
 

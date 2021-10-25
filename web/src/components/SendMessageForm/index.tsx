@@ -1,10 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { VscGithubInverted, VscSignOut } from 'react-icons/vsc';
 
-import styles from './styles.module.scss';
+import { useAuth } from '../../hooks';
+import { api } from '../../services';
 
-import { useAuth } from 'hooks/useAuth';
-import { api } from 'services/api';
+import styles from './styles.module.scss';
 
 export function SendMessageForm() {
 	const { user, signOut } = useAuth();

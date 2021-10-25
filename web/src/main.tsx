@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { App } from './App';
-
-import { AuthProvider } from 'contexts/auth';
+import { AuthProvider } from './hooks';
 
 import './styles/global.css';
 

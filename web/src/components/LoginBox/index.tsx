@@ -1,13 +1,11 @@
 import { VscGithubInverted } from 'react-icons/vsc';
 
+import { useAuth } from '../../hooks';
+
 import styles from './styles.module.scss';
 
-import { useAuth } from 'hooks/useAuth';
-
 export function LoginBox() {
-	const { user, signInUrl } = useAuth();
-
-	console.log({ user });
+	const { signInUrl } = useAuth();
 
 	return (
 		<div className={styles.loginBoxWrapper}>
