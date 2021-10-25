@@ -1,3 +1,3 @@
-# nlw07-heat
+# Server
 
-Full stack project made during the Next Level Week (NLW) #07.
+Server made during the Next Level Week (NLW) #07.
