@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="./.github/logo.svg" alt="DoWhile 2021" width="280"/>
+   <img src="./.github/logo.svg" alt="DoWhile 2021" width="350"/>
 </p>
 
 <p align="center">	
