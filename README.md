@@ -9,7 +9,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/miguelriosoliveira/dowhile-mural?color=774DD6" />
 
-  <a href="https://github.com/miguelriosoliveira/dowhile-mural/commits/master">
+  <a href="https://github.com/miguelriosoliveira/dowhile-mural/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/miguelriosoliveira/dowhile-mural?color=774DD6" />
   </a>
 
