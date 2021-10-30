@@ -4,16 +4,16 @@
 
 <p align="center">	
    <a href="https://www.linkedin.com/in/miguelriosoliveira/">
-      <img alt="Miguel Rios" src="https://img.shields.io/badge/-miguelriosoliveira-8257E5?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="Miguel Rios" src="https://img.shields.io/badge/-miguelriosoliveira-DA319B?style=flat&logo=Linkedin&logoColor=white" />
    </a>
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/miguelriosoliveira/dowhile-mural?color=774DD6" />
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/miguelriosoliveira/dowhile-mural?color=DA319B" />
 
   <a href="https://github.com/miguelriosoliveira/dowhile-mural/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/miguelriosoliveira/dowhile-mural?color=774DD6" />
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/miguelriosoliveira/dowhile-mural?color=DA319B" />
   </a>
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-8257E5" />
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-DA319B" />
 </p>
 
 > :rocket: Full-stack project made so developers can share their thoughts about an upcoming event. Made during the Next Level Week Heat (NLW Heat) #07 by Rocketseat.
